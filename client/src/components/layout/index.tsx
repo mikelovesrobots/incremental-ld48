@@ -4,6 +4,15 @@ import { Global } from "@emotion/core"
 import { Helmet } from "react-helmet"
 import HeaderGradient from "./HeaderGradient"
 
+import styled from "@emotion/styled"
+import { padding, margin } from "styles"
+
+const Container = styled.div({
+  ...padding.x(24),
+  ...margin.x("auto"),
+  maxWidth: 1200,
+})
+
 const Layout: React.FunctionComponent = ({ children }) => {
   return (
     <>
@@ -25,11 +34,12 @@ const Layout: React.FunctionComponent = ({ children }) => {
           display: "flex",
           flexDirection: "column",
           minHeight: "100vh",
-          alignItems: "center",
         }}
       >
         <HeaderGradient />
-        <div css={{ flex: "1 1 auto" }}>{children}</div>
+        <div css={{ flex: "1 1 auto" }}>
+          <Container>{children}</Container>
+        </div>
       </div>
     </>
   )
