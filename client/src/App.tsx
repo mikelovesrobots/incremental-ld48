@@ -26,7 +26,7 @@ const App: React.FunctionComponent = () => (
         <Card.Body>
           <Card.Title>Zombie</Card.Title>
           <Card.Text>A speechless revenant. Provides ♅100/s</Card.Text>
-          <Button variant="primary">Raise a Corpse: ♅50</Button>
+          <Button variant="success">Raise a Corpse: ♅50</Button>
         </Card.Body>
       </Card>
       <Card>
@@ -43,7 +43,7 @@ const App: React.FunctionComponent = () => (
             <span className="text-uppercase font-weight-bold">Outflux:</span>
             &nbsp;♅100/s
           </Card.Text>
-          <Button variant="primary">Assemble a Library: ♅500</Button>
+          <Button variant="success">Assemble a Library: ♅500</Button>
         </Card.Body>
       </Card>
       <Card>
@@ -51,19 +51,19 @@ const App: React.FunctionComponent = () => (
           <Card.Title>Dungeon</Card.Title>
           <Card.Text>A stronghold for your evil works.</Card.Text>
           <Card.Text>Provides 100/s</Card.Text>
-          <Button variant="primary">Dig a Dungeon: ♅2000</Button>
+          <Button variant="success">Dig a Dungeon: ♅2000</Button>
         </Card.Body>
       </Card>
       <Card>
         <Card.Body>
           <Card.Title>City of the Dead</Card.Title>
-          <Button variant="primary">Conquer a City: ♅20000</Button>
+          <Button variant="success">Conquer a City: ♅20000</Button>
         </Card.Body>
       </Card>
       <Card>
         <Card.Body>
           <Card.Title>Army of the Dead</Card.Title>
-          <Button variant="primary">Raise an Army: ♅200000</Button>
+          <Button variant="success">Raise an Army: ♅200000</Button>
         </Card.Body>
       </Card>
       <Card>
@@ -74,13 +74,13 @@ const App: React.FunctionComponent = () => (
             transfer your consciousness to a new host for an x2 multiplier
             bonus.
           </Card.Text>
-          <Button variant="primary">Transfer Consciousness: ♅10000</Button>
+          <Button variant="success">Transfer Consciousness: ♅10000</Button>
         </Card.Body>
       </Card>
       <Card>
         <Card.Body>
           <Card.Title>Conquer World</Card.Title>
-          <Button variant="primary">End Everything: ♅20000</Button>
+          <Button variant="success">End Everything: ♅20000</Button>
         </Card.Body>
       </Card>
     </CardColumns>
