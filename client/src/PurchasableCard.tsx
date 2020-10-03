@@ -15,10 +15,14 @@ export interface Purchasable {
 
 interface PurchasableCardProps {
   purchasable: Purchasable;
+  onPurchase: (purchasable: Purchasable) => void;
+  disableButton?: boolean;
 }
 
 const PurchasableCard: React.FunctionComponent<PurchasableCardProps> = ({
   purchasable,
+  onPurchase,
+  disableButton,
 }) => (
   <Card>
     <Card.Body>
@@ -50,7 +54,12 @@ const PurchasableCard: React.FunctionComponent<PurchasableCardProps> = ({
           </ul>
         </Card.Text>
       )}
-      <Button variant="success">
+      <Button
+        variant="success"
+        // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+        onClick={() => onPurchase(purchasable)}
+        disabled={disableButton}
+      >
         {purchasable.ctaText}: ♅{purchasable.nextCost}
       </Button>
     </Card.Body>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Container from 'react-bootstrap/esm/Container';
 import Jumbotron from 'react-bootstrap/esm/Jumbotron';
@@ -62,45 +62,62 @@ const purchasables: Purchasable[] = [
   },
 ];
 
-const App: React.FunctionComponent = () => (
-  <Container className="p-3">
-    <Jumbotron>
-      <h1 className="header">Infinitely Worse - A Lich Adventure</h1>
-    </Jumbotron>
-    <Navbar variant="dark" bg="info" sticky="top">
-      <Navbar.Text className="pr-4">
-        <span className="text-uppercase font-weight-bold">Power:</span> ♅100
-      </Navbar.Text>
-      <Navbar.Text>
-        <span className="text-uppercase font-weight-bold">Influx:</span> ♅100/s
-      </Navbar.Text>
-    </Navbar>
-    <CardColumns className="mt-4">
-      {purchasables.map((purchasable) => (
-        <PurchasableCard purchasable={purchasable} key={purchasable.id} />
-      ))}
-      <Card>
-        <Card.Body>
-          <Card.Title>Be Reborn</Card.Title>
-          <Card.Text>
-            Your vessel is wearing out. You can give up all your progress and
-            transfer your consciousness to a new host for an ×2 multiplier
-            bonus.
-          </Card.Text>
-          <Button variant="info">Transfer Consciousness: ♅10000</Button>
-        </Card.Body>
-      </Card>
-      <Card>
-        <Card.Body>
-          <Card.Title>Conquer World</Card.Title>
-          <Card.Text>
-            Eventually, all that is left is to snuff out the flame.
-          </Card.Text>
-          <Button variant="info">Crush Everything: ♅20000</Button>
-        </Card.Body>
-      </Card>
-    </CardColumns>
-  </Container>
-);
+const App: React.FunctionComponent = () => {
+  const [power, setPower] = useState(100);
+
+  const onPurchase = (purchasable: Purchasable) => {
+    setPower(power - purchasable.nextCost);
+    // eslint-disable-next-line no-param-reassign
+    purchasable.quantity += 1;
+  };
+
+  return (
+    <Container className="p-3">
+      <Jumbotron>
+        <h1 className="header">Infinitely Worse - A Lich Adventure</h1>
+      </Jumbotron>
+      <Navbar variant="dark" bg="info" sticky="top">
+        <Navbar.Text className="pr-4">
+          <span className="text-uppercase font-weight-bold">Power:</span> ♅
+          {power}
+        </Navbar.Text>
+        <Navbar.Text>
+          <span className="text-uppercase font-weight-bold">Influx:</span>{' '}
+          ♅100/s
+        </Navbar.Text>
+      </Navbar>
+      <CardColumns className="mt-4">
+        {purchasables.map((purchasable) => (
+          <PurchasableCard
+            purchasable={purchasable}
+            key={purchasable.id}
+            onPurchase={onPurchase}
+            disableButton={purchasable.nextCost > power}
+          />
+        ))}
+        <Card>
+          <Card.Body>
+            <Card.Title>Be Reborn</Card.Title>
+            <Card.Text>
+              Your vessel is wearing out. You can give up all your progress and
+              transfer your consciousness to a new host for an ×2 multiplier
+              bonus.
+            </Card.Text>
+            <Button variant="info">Transfer Consciousness: ♅10000</Button>
+          </Card.Body>
+        </Card>
+        <Card>
+          <Card.Body>
+            <Card.Title>Conquer World</Card.Title>
+            <Card.Text>
+              Eventually, all that is left is to snuff out the flame.
+            </Card.Text>
+            <Button variant="info">Crush Everything: ♅20000</Button>
+          </Card.Body>
+        </Card>
+      </CardColumns>
+    </Container>
+  );
+};
 
 export default App;
