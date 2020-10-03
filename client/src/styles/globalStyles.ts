@@ -4,6 +4,7 @@ import { colors } from "./"
 export default css`
   body {
     color: ${colors.text};
+    background-color: ${colors.background};
   }
 
   *:focus {
