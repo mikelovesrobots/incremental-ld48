@@ -3,12 +3,13 @@ import Layout from "components/layout"
 import { typography } from "styles"
 import styled from "@emotion/styled"
 import { useInterval } from "beautiful-react-hooks"
+import { formatShort } from "swarm-numberformat"
 
 const Headline = styled.h1({ ...typography.headline1 })
 const Profits = styled.p({ ...typography.body })
 
 const IndexPage: React.FunctionComponent = () => {
-  const [cash, setCash] = useState(0)
+  const [cash, setCash] = useState(10000)
 
   useInterval(() => {
     setCash(cash + 1)
@@ -17,7 +18,7 @@ const IndexPage: React.FunctionComponent = () => {
   return (
     <Layout>
       <Headline>Infinitely Worse - An Adventure</Headline>
-      <Profits>Cash: {cash.toExponential(1)}</Profits>
+      <Profits>Cash: {formatShort(cash)}</Profits>
     </Layout>
   )
 }

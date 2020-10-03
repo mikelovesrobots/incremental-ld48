@@ -18,7 +18,7 @@
     "lib": ["es2016", "dom", "es2017.object"],
     "jsx": "react",
     "paths": {
-      "*": ["./src/*"]
+      "*": ["./src/*", "./src/types/*"]
     },
     "types": ["@emotion/core", "node"]
   },
