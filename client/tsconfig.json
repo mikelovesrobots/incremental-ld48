@@ -1,27 +1,25 @@
 {
   "compilerOptions": {
-    "allowJs": false,
-    "allowSyntheticDefaultImports": true,
-    "moduleResolution": "Node",
-    "noEmit": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "pretty": true,
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
     "skipLibCheck": true,
-    "sourceMap": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "strict": true,
-
-    "baseUrl": ".",
-    "module": "esNext",
-    "lib": ["es2016", "dom", "es2017.object"],
-    "jsx": "react",
-    "paths": {
-      "*": ["./src/*", "./src/types/*"]
-    },
-    "types": ["@emotion/core", "node"]
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react"
   },
-  "include": ["./src/**/*"],
-  "files": ["definitions/assets.d.ts"]
+  "include": [
+    "src"
+  ]
 }
