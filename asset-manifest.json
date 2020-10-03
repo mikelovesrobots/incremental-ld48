@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/incremental-ld48/static/css/main.5f361e03.chunk.css",
+    "main.js": "/incremental-ld48/static/js/main.cd086960.chunk.js",
+    "main.js.map": "/incremental-ld48/static/js/main.cd086960.chunk.js.map",
+    "runtime-main.js": "/incremental-ld48/static/js/runtime-main.e3e4dcd5.js",
+    "runtime-main.js.map": "/incremental-ld48/static/js/runtime-main.e3e4dcd5.js.map",
+    "static/js/2.a925df73.chunk.js": "/incremental-ld48/static/js/2.a925df73.chunk.js",
+    "static/js/2.a925df73.chunk.js.map": "/incremental-ld48/static/js/2.a925df73.chunk.js.map",
+    "index.html": "/incremental-ld48/index.html",
+    "precache-manifest.9fd13bb1458925b159f9e69689280f6d.js": "/incremental-ld48/precache-manifest.9fd13bb1458925b159f9e69689280f6d.js",
+    "service-worker.js": "/incremental-ld48/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/incremental-ld48/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.a925df73.chunk.js.LICENSE.txt": "/incremental-ld48/static/js/2.a925df73.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/incremental-ld48/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e3e4dcd5.js",
+    "static/js/2.a925df73.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.cd086960.chunk.js"
+  ]
+}
