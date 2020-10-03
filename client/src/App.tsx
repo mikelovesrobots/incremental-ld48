@@ -83,7 +83,7 @@ const App: React.FunctionComponent = () => (
         <Card.Body>
           <Card.Title>Be Reborn</Card.Title>
           <Card.Text>
-            You&apos;re wearing out. You can give up all your progress and
+            Your vessel is wearing out. You can give up all your progress and
             transfer your consciousness to a new host for an ×2 multiplier
             bonus.
           </Card.Text>
