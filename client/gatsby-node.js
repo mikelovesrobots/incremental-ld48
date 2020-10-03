@@ -1,7 +1,15 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/node-apis/
- */
+"use strict"
 
-// You can delete this file if you're not using it
+const path = require("path")
+
+const src = path.join(__dirname, "src")
+const nodeModules = path.join(__dirname, "node_modules")
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      extensions: [".ts", ".tsx", ".js"],
+      modules: [src, nodeModules],
+    },
+  })
+}

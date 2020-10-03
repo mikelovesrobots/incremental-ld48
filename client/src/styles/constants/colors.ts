@@ -1,19 +1,9 @@
 export const primary = {
-  0: "#effaf5",
-  10: "#c2f6de",
-  20: "#95efc6",
-  30: "#6de5af",
-  40: "#4dd797",
-  50: "#33c481",
-  60: "#20ab6a",
-  70: "#128b51",
-  80: "#096438",
-  90: "#04391f",
-  100: "#010d07",
+  0: "##F2F2F2",
+  25: "#a6a6a6",
+  50: "#353f40",
+  75: "#232526",
+  100: "#0D0D0D",
 }
 
-export const text = "#010d07"
-export const textLight = "#516159"
-
-export const red = "#F23D3D"
-export const lightGrey = "#E8E8E8"
+export const text = primary[100]

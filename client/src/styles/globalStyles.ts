@@ -1,4 +1,3 @@
-import "ress"
 import css from "@emotion/css"
 import { colors } from "./"
 

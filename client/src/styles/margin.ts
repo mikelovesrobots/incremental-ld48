@@ -1,6 +1,5 @@
 import { CSSObject } from "@emotion/styled"
 import spacing, { Spacing } from "./constants/spacing"
-import { breakpoint } from "styles"
 
 type MarginFunction = (size: Spacing) => CSSObject
 
