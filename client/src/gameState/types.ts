@@ -13,8 +13,8 @@ export interface Purchasable {
   name: string;
   type: PurchasableType;
   description: string;
-  visible: boolean;
-  unlockConditions: UnlockConditions;
+  isUnlocked: boolean;
+  unlockConditions?: UnlockConditions;
   purchased: boolean;
   quantity: number;
   outfluxPerSecond: number;

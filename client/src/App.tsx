@@ -18,8 +18,8 @@ const App: React.FunctionComponent = () => {
     dispatch({ type: 'purchase', id: purchasable.id });
   };
 
-  const visiblePurchasables = gameState.purchasables.filter(
-    (purchasable) => purchasable.visible
+  const unlockedPurchasables = gameState.purchasables.filter(
+    (purchasable) => purchasable.isUnlocked
   );
 
   return (
@@ -40,7 +40,7 @@ const App: React.FunctionComponent = () => {
         )}
       </Navbar>
       <CardColumns className="mt-4">
-        {visiblePurchasables.map((purchasable) => (
+        {unlockedPurchasables.map((purchasable) => (
           <PurchasableCard
             purchasable={purchasable}
             key={purchasable.id}
