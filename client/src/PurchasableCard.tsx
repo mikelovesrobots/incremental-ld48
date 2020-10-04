@@ -38,7 +38,7 @@ const PurchasableCard: React.FunctionComponent<PurchasableCardProps> = ({
                 <span className="text-uppercase font-weight-bold">
                   Outflux:
                 </span>
-                &nbsp;♅{purchasable.outfluxPerSecond}/s
+                &nbsp;♅+{Math.floor(purchasable.outfluxPerSecond)}/s
               </li>
             )}
           </ul>
@@ -50,7 +50,7 @@ const PurchasableCard: React.FunctionComponent<PurchasableCardProps> = ({
         onClick={() => onPurchase(purchasable)}
         disabled={disableButton}
       >
-        {purchasable.ctaText}: ♅{purchasable.nextCost}
+        {purchasable.ctaText}: ♅{Math.floor(purchasable.nextCost)}
       </Button>
     </Card.Body>
   </Card>

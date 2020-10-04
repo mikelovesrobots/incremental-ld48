@@ -5,13 +5,25 @@ export const updateStateForPurchase = (
   state: GameState,
   action: GameStateAction
 ) => {
-  const purchasables = state.purchasables.map((purchasable) => ({
-    ...purchasable,
-    purchased: true,
-    quantity: purchasable.quantity + (purchasable.id === action.id ? 1 : 0),
-    outfluxPerSecond:
-      purchasable.outfluxPerSecond + (purchasable.id === action.id ? 1 : 0),
-  }));
+  const purchasables = state.purchasables.map((purchasable) => {
+    if (purchasable.id !== action.id) {
+      return { ...purchasable };
+    }
+
+    const quantity = purchasable.quantity + 1;
+    const multiplier = Math.floor(quantity / 25); // every 25 get a new one
+    const outfluxPerSecond =
+      purchasable.baseProductivityPerSecond * quantity * (1 + multiplier);
+    const nextCost =
+      purchasable.baseCost * purchasable.costCoefficient ** quantity;
+    return {
+      ...purchasable,
+      quantity,
+      outfluxPerSecond,
+      nextCost,
+      purchased: true,
+    };
+  });
 
   return {
     ...state,

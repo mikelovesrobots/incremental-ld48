@@ -7,6 +7,9 @@ export interface Purchasable {
   outfluxPerSecond: number;
   ctaText: string;
   nextCost: number;
+  baseCost: number;
+  costCoefficient: number;
+  baseProductivityPerSecond: number;
 }
 
 export interface GameState {
