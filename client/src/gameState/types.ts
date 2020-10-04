@@ -21,6 +21,7 @@ export interface Purchasable {
   ctaText: string;
   nextCost: number;
   baseCost: number;
+  baseCostRebirthMultiplier: number;
   costCoefficient: number;
   baseProductivityPerSecond: number;
   hidePurchaseButton?: boolean;
@@ -30,6 +31,7 @@ export interface GameState {
   power: number;
   powerRebirthMultiplier: number;
   isGameOver: boolean;
+  rebirthCount: number;
   tickSpeed: number;
   influxPerSecond: number;
   purchasables: Purchasable[];
