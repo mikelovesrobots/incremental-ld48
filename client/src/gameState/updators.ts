@@ -15,7 +15,8 @@ export const updateStateForPurchase = (
     const outfluxPerSecond =
       purchasable.baseProductivityPerSecond * quantity * (1 + multiplier);
     const nextCost =
-      purchasable.baseCost * purchasable.costCoefficient ** quantity;
+      purchasable.baseCost *
+      purchasable.costCoefficient ** purchasable.quantity;
     return {
       ...purchasable,
       quantity,

@@ -45,8 +45,7 @@ const PurchasableCard: React.FunctionComponent<PurchasableCardProps> = ({
         </Card.Text>
       )}
       <Button
-        variant="success"
-        // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+        variant={disableButton ? 'dark' : 'success'}
         onClick={() => onPurchase(purchasable)}
         disabled={disableButton}
       >
