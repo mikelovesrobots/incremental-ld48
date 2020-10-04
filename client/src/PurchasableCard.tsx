@@ -25,7 +25,7 @@ const PurchasableCard: React.FunctionComponent<PurchasableCardProps> = ({
       {purchasable.purchased && (
         <Card.Text>
           <ul>
-            {purchasable.quantity && (
+            {purchasable.quantity > 0 && (
               <li>
                 <span className="text-uppercase font-weight-bold">
                   Quantity:
@@ -33,7 +33,7 @@ const PurchasableCard: React.FunctionComponent<PurchasableCardProps> = ({
                 &nbsp;{purchasable.quantity}
               </li>
             )}
-            {purchasable.outfluxPerSecond && (
+            {purchasable.outfluxPerSecond > 0 && (
               <li>
                 <span className="text-uppercase font-weight-bold">
                   Outflux:
