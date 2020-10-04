@@ -30,7 +30,7 @@ const App: React.FunctionComponent = () => {
         </Navbar.Text>
         {gameState.influxPerSecond > 0 && (
           <Navbar.Text>
-            <span className="text-uppercase font-weight-bold">Influx:</span> +♅
+            <span className="text-uppercase font-weight-bold">Influx:</span> ♅+
             {Math.floor(gameState.influxPerSecond)}/s
           </Navbar.Text>
         )}
