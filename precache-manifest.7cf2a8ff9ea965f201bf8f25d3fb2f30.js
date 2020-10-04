@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8a4826e84f3e8ca9c75e0902ad6b5fd6",
+    "revision": "970033bd1076076fc547c0ddfb560548",
     "url": "/incremental-ld48/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/incremental-ld48/static/css/2.f1c3d897.chunk.css"
   },
   {
-    "revision": "d4b7e95bb987ea23d590",
+    "revision": "615f6a0f0939d2afdfa5",
     "url": "/incremental-ld48/static/css/main.27fd15f6.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/incremental-ld48/static/js/2.a090e3a1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d4b7e95bb987ea23d590",
-    "url": "/incremental-ld48/static/js/main.25e782e0.chunk.js"
+    "revision": "615f6a0f0939d2afdfa5",
+    "url": "/incremental-ld48/static/js/main.f0cd42d9.chunk.js"
   },
   {
     "revision": "d6acc6b69cb4a81af831",
