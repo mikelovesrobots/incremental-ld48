@@ -27,19 +27,19 @@ const App: React.FunctionComponent = () => {
       </Jumbotron>
       {gameState.isGameOver === false && (
         <Navbar variant="dark" bg="info" sticky="top">
-          <Navbar.Text className="pr-4">
+          <Navbar.Text className="pr-4 text-white">
             <span className="text-uppercase font-weight-bold">Power:</span> ♅
             {Math.floor(gameState.power)}
           </Navbar.Text>
           {gameState.influxPerSecond > 0 && (
-            <Navbar.Text className="pr-4">
+            <Navbar.Text className="pr-4 text-white">
               <span className="text-uppercase font-weight-bold">Influx:</span>{' '}
               ♅+
               {Math.floor(gameState.influxPerSecond)}/s
             </Navbar.Text>
           )}
           {gameState.powerRebirthMultiplier > 1 && (
-            <Navbar.Text>
+            <Navbar.Text className="text-white">
               <span className="text-uppercase font-weight-bold">
                 Multiplier:
               </span>{' '}
