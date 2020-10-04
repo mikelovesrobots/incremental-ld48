@@ -1,17 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/esm/Button';
 import Card from 'react-bootstrap/esm/Card';
-
-export interface Purchasable {
-  id: string;
-  name: string;
-  description: string;
-  purchased: boolean;
-  quantity: number;
-  outfluxPerSecond: number;
-  ctaText: string;
-  nextCost: number;
-}
+import { Purchasable } from './useGameState';
 
 interface PurchasableCardProps {
   purchasable: Purchasable;

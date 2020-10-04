@@ -1,0 +1,59 @@
+import { useReducer } from 'react';
+import PurchasableCard from './PurchasableCard';
+
+export interface Purchasable {
+  id: string;
+  name: string;
+  description: string;
+  purchased: boolean;
+  quantity: number;
+  outfluxPerSecond: number;
+  ctaText: string;
+  nextCost: number;
+}
+
+type GameStateAction = {
+  type: string;
+  id: string;
+};
+
+export interface GameState {
+  power: number;
+  purchasables: Purchasable[];
+}
+
+const nextCostSelector = (state: GameState, id: string) => {
+  const found = state.purchasables.find((purchasable: Purchasable) => {
+    return purchasable.id === id;
+  });
+
+  if (found) {
+    return found.nextCost;
+  }
+  return 0;
+};
+
+const reducer = (state: GameState, action: GameStateAction) => {
+  switch (action.type) {
+    case 'purchase':
+      return {
+        ...state,
+        power: state.power - nextCostSelector(state, action.id),
+        purchasables: state.purchasables.map((purchasable) => ({
+          ...purchasable,
+          quantity:
+            purchasable.id === action.id
+              ? purchasable.quantity + 1
+              : purchasable,
+        })),
+      } as GameState;
+    default:
+      throw new Error('Unexpected action');
+  }
+};
+
+const useGameState = (initialGameState: GameState) => {
+  return useReducer(reducer, initialGameState);
+};
+
+export default useGameState;
