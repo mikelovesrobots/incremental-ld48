@@ -19,6 +19,7 @@ type GameStateAction = {
 export interface GameState {
   power: number;
   tickSpeed: number;
+  influxPerSecond: number;
   purchasables: Purchasable[];
 }
 
@@ -31,12 +32,6 @@ const nextCostSelector = (state: GameState, id?: string) => {
     return found.nextCost;
   }
   return 0;
-};
-
-const totalOutfluxSelector = (state: GameState) => {
-  return state.purchasables
-    .map((next) => next.outfluxPerSecond)
-    .reduce((accumulator, next) => accumulator + next);
 };
 
 const reducer = (state: GameState, action: GameStateAction) => {
@@ -56,8 +51,7 @@ const reducer = (state: GameState, action: GameStateAction) => {
     case 'tick':
       return {
         ...state,
-        power:
-          state.power + (totalOutfluxSelector(state) * state.tickSpeed) / 1000,
+        power: state.power + (state.influxPerSecond * state.tickSpeed) / 1000,
       };
     default:
       throw new Error('Unexpected action');

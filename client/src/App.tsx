@@ -13,6 +13,7 @@ import useGameState, { Purchasable } from './useGameState';
 const initialGameState = {
   power: 100,
   tickSpeed: 100,
+  influxPerSecond: 0,
   purchasables: [
     {
       id: 'zombie',
@@ -89,10 +90,12 @@ const App: React.FunctionComponent = () => {
           <span className="text-uppercase font-weight-bold">Power:</span> ♅
           {gameState.power}
         </Navbar.Text>
-        <Navbar.Text>
-          <span className="text-uppercase font-weight-bold">Influx:</span>{' '}
-          ♅100/s
-        </Navbar.Text>
+        {gameState.influxPerSecond > 0 && (
+          <Navbar.Text>
+            <span className="text-uppercase font-weight-bold">Influx:</span> ♅
+            {gameState.influxPerSecond}/s
+          </Navbar.Text>
+        )}
       </Navbar>
       <CardColumns className="mt-4">
         {gameState.purchasables.map((purchasable) => (
