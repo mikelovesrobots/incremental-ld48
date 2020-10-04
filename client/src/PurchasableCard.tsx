@@ -47,16 +47,14 @@ const PurchasableCard: React.FunctionComponent<PurchasableCardProps> = ({
                 </li>
               )}
             </ul>
+            <ProgressBar
+              striped
+              animated
+              variant="info"
+              now={((purchasable.quantity % 25) / 25) * 100}
+              className="mb-4 bg-light"
+            />
           </Card.Text>
-        )}
-        {purchasable.isPurchased && (
-          <ProgressBar
-            striped
-            animated
-            variant="info"
-            now={((purchasable.quantity % 25) / 25) * 100}
-            className="mb-4 bg-light"
-          />
         )}
         <Button
           variant={disableButton ? 'dark' : buttonColor}
