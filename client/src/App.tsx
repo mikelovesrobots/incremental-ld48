@@ -52,7 +52,7 @@ const App: React.FunctionComponent = () => {
               transfer your consciousness to a new host for an ×2 multiplier
               bonus.
             </Card.Text>
-            <Button variant="info">Transfer Consciousness: ♅10000</Button>
+            <Button variant="info">Transfer Consciousness: ♅50000</Button>
           </Card.Body>
         </Card>
         <Card>
@@ -61,7 +61,7 @@ const App: React.FunctionComponent = () => {
             <Card.Text>
               Eventually, all that is left is to snuff out the flame.
             </Card.Text>
-            <Button variant="info">Crush Everything: ♅20000</Button>
+            <Button variant="info">Crush Everything: ♅10000000</Button>
           </Card.Body>
         </Card>
       </CardColumns>
