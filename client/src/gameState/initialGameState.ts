@@ -172,7 +172,7 @@ const initialGameState = {
       type: PurchasableType.Oneshot,
       name: 'Still the Wind',
       description:
-        'With the humans gone, it is time to bring upon the land a great calm.',
+        'With the humans gone, it is time to bring upon the sky a great calm.',
       isUnlocked: false,
       unlockConditions: {
         purchasableId: 'end1',
