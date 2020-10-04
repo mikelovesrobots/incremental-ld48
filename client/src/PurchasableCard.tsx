@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/esm/Button';
 import Card from 'react-bootstrap/esm/Card';
+import ProgressBar from 'react-bootstrap/esm/ProgressBar';
 import { Purchasable, PurchasableType } from './gameState/types';
 
 interface PurchasableCardProps {
@@ -47,6 +48,15 @@ const PurchasableCard: React.FunctionComponent<PurchasableCardProps> = ({
               )}
             </ul>
           </Card.Text>
+        )}
+        {purchasable.isPurchased && (
+          <ProgressBar
+            striped
+            animated
+            variant="info"
+            now={((purchasable.quantity % 25) / 25) * 100}
+            className="mb-4 bg-light"
+          />
         )}
         <Button
           variant={disableButton ? 'dark' : buttonColor}
