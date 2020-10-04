@@ -22,11 +22,11 @@ const PurchasableCard: React.FunctionComponent<PurchasableCardProps> = ({
       <Card.Body>
         <Card.Title>{purchasable.name}</Card.Title>
         <Card.Subtitle
-          className={`${purchasable.purchased ? 'mb-2' : 'mb-4'} text-dark`}
+          className={`${purchasable.isPurchased ? 'mb-2' : 'mb-4'} text-dark`}
         >
           {purchasable.description}
         </Card.Subtitle>
-        {purchasable.purchased && (
+        {purchasable.isPurchased && (
           <Card.Text>
             <ul>
               {purchasable.quantity > 0 && (

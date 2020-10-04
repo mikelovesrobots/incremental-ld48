@@ -15,7 +15,7 @@ export interface Purchasable {
   description: string;
   isUnlocked: boolean;
   unlockConditions?: UnlockConditions;
-  purchased: boolean;
+  isPurchased: boolean;
   quantity: number;
   outfluxPerSecond: number;
   ctaText: string;

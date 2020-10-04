@@ -1,9 +1,6 @@
-import {
-  GameState,
-  GameStateAction,
-  PurchasableGameStateAction,
-} from './types';
-import { updateStateForPurchase, updateStateForTick } from './updators';
+import purchaseUpdator from './stateUpdators/purchaseUpdator';
+import tickUpdator from './stateUpdators/tickUpdator';
+import { GameState, GameStateAction } from './types';
 
 const reducer = (state: GameState, action: GameStateAction) => {
   switch (action.type) {
@@ -12,12 +9,9 @@ const reducer = (state: GameState, action: GameStateAction) => {
         throw new Error("expected purchasable for 'purchase' action type");
       }
 
-      return updateStateForPurchase(
-        state,
-        action as PurchasableGameStateAction
-      );
+      return purchaseUpdator(state, action.purchasable);
     case 'tick':
-      return updateStateForTick(state);
+      return tickUpdator(state);
     default:
       throw new Error('Unexpected action');
   }
