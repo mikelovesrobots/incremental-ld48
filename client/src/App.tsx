@@ -31,9 +31,15 @@ const App: React.FunctionComponent = () => {
           {Math.floor(gameState.power)}
         </Navbar.Text>
         {gameState.influxPerSecond > 0 && (
-          <Navbar.Text>
+          <Navbar.Text className="pr-4">
             <span className="text-uppercase font-weight-bold">Influx:</span> ♅+
             {Math.floor(gameState.influxPerSecond)}/s
+          </Navbar.Text>
+        )}
+        {gameState.powerRebirthMultiplier > 1 && (
+          <Navbar.Text>
+            <span className="text-uppercase font-weight-bold">Multiplier:</span>{' '}
+            ×{gameState.powerRebirthMultiplier}
           </Navbar.Text>
         )}
       </Navbar>

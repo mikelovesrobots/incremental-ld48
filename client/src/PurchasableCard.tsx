@@ -61,7 +61,7 @@ const PurchasableCard: React.FunctionComponent<PurchasableCardProps> = ({
           onClick={() => onPurchase(purchasable)}
           disabled={disableButton}
         >
-          {purchasable.ctaText}: ♅{Math.floor(purchasable.nextCost)}
+          {purchasable.ctaText} for ♅{Math.floor(purchasable.nextCost)}
         </Button>
       </Card.Body>
     </Card>

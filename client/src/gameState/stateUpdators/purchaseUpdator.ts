@@ -7,6 +7,7 @@ import unlockOtherPurchasablesIfNecessary from './purchaseUpdators/unlockOtherPu
 import updatePurchasableOutfluxPerSecond from './purchaseUpdators/updatePurchasableOutfluxPerSecond';
 import updatePurchasableNextCost from './purchaseUpdators/updatePurchasableNextCost';
 import updateTotalInfluxPerSecond from './purchaseUpdators/updateTotalInfluxPerSecond';
+import handleRebirthIfNecessary from './purchaseUpdators/handleRebirthIfNecessary';
 
 const purchaseUpdator = (state: GameState, purchasable: Purchasable) => {
   const payload = {
@@ -25,6 +26,7 @@ const purchaseUpdator = (state: GameState, purchasable: Purchasable) => {
     updatePurchasableNextCost,
     unlockOtherPurchasablesIfNecessary,
     updateTotalInfluxPerSecond,
+    handleRebirthIfNecessary,
   ].reduce(fn, payload).state;
 };
 

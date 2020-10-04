@@ -27,6 +27,7 @@ export interface Purchasable {
 
 export interface GameState {
   power: number;
+  powerRebirthMultiplier: number;
   tickSpeed: number;
   influxPerSecond: number;
   purchasables: Purchasable[];

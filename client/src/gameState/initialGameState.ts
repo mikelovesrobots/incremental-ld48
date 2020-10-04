@@ -2,6 +2,7 @@ import { PurchasableType } from './types';
 
 const initialGameState = {
   power: 5,
+  powerRebirthMultiplier: 1,
   tickSpeed: 100,
   influxPerSecond: 0,
   purchasables: [
@@ -17,7 +18,7 @@ const initialGameState = {
       outfluxPerSecond: 0,
       ctaText: 'Emerge',
       nextCost: 1,
-      baseCost: 0,
+      baseCost: 1,
       costCoefficient: 0,
       baseProductivityPerSecond: 0,
     },
@@ -133,7 +134,7 @@ const initialGameState = {
       outfluxPerSecond: 0,
       ctaText: 'Transfer Consciousness',
       nextCost: 10000,
-      baseCost: 0,
+      baseCost: 10000,
       costCoefficient: 0,
       baseProductivityPerSecond: 0,
     },
@@ -151,8 +152,8 @@ const initialGameState = {
       quantity: 0,
       outfluxPerSecond: 0,
       ctaText: 'Crush Everything',
-      nextCost: 100000,
-      baseCost: 0,
+      nextCost: 1000000,
+      baseCost: 1000000,
       costCoefficient: 0,
       baseProductivityPerSecond: 0,
     },
