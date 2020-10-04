@@ -48,26 +48,6 @@ const App: React.FunctionComponent = () => {
             disableButton={purchasable.nextCost > gameState.power}
           />
         ))}
-        <Card>
-          <Card.Body>
-            <Card.Title>Be Reborn</Card.Title>
-            <Card.Text>
-              Your vessel is wearing out. You can give up all your progress and
-              transfer your consciousness to a new host for an ×2 multiplier
-              bonus.
-            </Card.Text>
-            <Button variant="info">Transfer Consciousness: ♅50000</Button>
-          </Card.Body>
-        </Card>
-        <Card>
-          <Card.Body>
-            <Card.Title>Conquer World</Card.Title>
-            <Card.Text>
-              Eventually, all that is left is to snuff out the flame.
-            </Card.Text>
-            <Button variant="info">Crush Everything: ♅10000000</Button>
-          </Card.Body>
-        </Card>
       </CardColumns>
     </Container>
   );
