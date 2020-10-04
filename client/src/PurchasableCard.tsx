@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from 'react-bootstrap/esm/Button';
 import Card from 'react-bootstrap/esm/Card';
-import { Purchasable } from './useGameState';
+import { Purchasable } from './gameState/types';
 
 interface PurchasableCardProps {
   purchasable: Purchasable;

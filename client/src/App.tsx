@@ -6,9 +6,9 @@ import Navbar from 'react-bootstrap/esm/Navbar';
 import Card from 'react-bootstrap/esm/Card';
 import CardColumns from 'react-bootstrap/esm/CardColumns';
 import Button from 'react-bootstrap/esm/Button';
-import { useInterval } from 'beautiful-react-hooks';
 import PurchasableCard from './PurchasableCard';
-import useGameState, { Purchasable } from './useGameState';
+import useGameState from './gameState/useGameState';
+import { Purchasable } from './gameState/types';
 
 const initialGameState = {
   power: 100,
@@ -71,10 +71,6 @@ const initialGameState = {
 
 const App: React.FunctionComponent = () => {
   const [gameState, dispatch] = useGameState(initialGameState);
-
-  useInterval(() => {
-    dispatch({ type: 'tick' });
-  }, gameState.tickSpeed);
 
   const onPurchase = (purchasable: Purchasable) => {
     dispatch({ type: 'purchase', id: purchasable.id });
