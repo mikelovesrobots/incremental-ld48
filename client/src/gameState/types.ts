@@ -23,11 +23,13 @@ export interface Purchasable {
   baseCost: number;
   costCoefficient: number;
   baseProductivityPerSecond: number;
+  hidePurchaseButton?: boolean;
 }
 
 export interface GameState {
   power: number;
   powerRebirthMultiplier: number;
+  isGameOver: boolean;
   tickSpeed: number;
   influxPerSecond: number;
   purchasables: Purchasable[];

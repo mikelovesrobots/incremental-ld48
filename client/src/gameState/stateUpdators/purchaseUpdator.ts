@@ -8,6 +8,7 @@ import updatePurchasableOutfluxPerSecond from './purchaseUpdators/updatePurchasa
 import updatePurchasableNextCost from './purchaseUpdators/updatePurchasableNextCost';
 import updateTotalInfluxPerSecond from './purchaseUpdators/updateTotalInfluxPerSecond';
 import handleRebirthIfNecessary from './purchaseUpdators/handleRebirthIfNecessary';
+import handleEndIfNecessary from './purchaseUpdators/handleEndIfNecessary';
 
 const purchaseUpdator = (state: GameState, purchasable: Purchasable) => {
   const payload = {
@@ -19,6 +20,7 @@ const purchaseUpdator = (state: GameState, purchasable: Purchasable) => {
     transformer(lastPayload);
 
   return [
+    handleEndIfNecessary,
     spendPower,
     lockPurchasableIfItNeedsIt,
     incrementPurchasableQuantity,

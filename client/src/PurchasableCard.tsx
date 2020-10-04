@@ -56,13 +56,17 @@ const PurchasableCard: React.FunctionComponent<PurchasableCardProps> = ({
             />
           </Card.Text>
         )}
-        <Button
-          variant={disableButton ? 'dark' : buttonColor}
-          onClick={() => onPurchase(purchasable)}
-          disabled={disableButton}
-        >
-          {purchasable.ctaText} for ♅{Math.floor(purchasable.nextCost)}
-        </Button>
+        {purchasable.hidePurchaseButton !== true && (
+          <Button
+            variant={disableButton ? 'dark' : buttonColor}
+            onClick={() => onPurchase(purchasable)}
+            disabled={disableButton}
+          >
+            {purchasable.ctaText}
+            {purchasable.nextCost > 0 &&
+              ` for ♅${Math.floor(purchasable.nextCost)}`}
+          </Button>
+        )}
       </Card.Body>
     </Card>
   );
