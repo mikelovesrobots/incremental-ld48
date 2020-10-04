@@ -1,0 +1,60 @@
+const initialGameState = {
+  power: 100,
+  tickSpeed: 100,
+  influxPerSecond: 0,
+  purchasables: [
+    {
+      id: 'zombie',
+      name: 'Zombie',
+      description: 'A speechless revenant.',
+      purchased: true,
+      quantity: 1,
+      outfluxPerSecond: 0,
+      ctaText: 'Raise a Zombie',
+      nextCost: 50,
+    },
+    {
+      id: 'library',
+      name: 'Evil Library',
+      description:
+        'Knowledge is dangerous. The people who control that knowledge are even more dangerous.',
+      purchased: false,
+      quantity: 0,
+      outfluxPerSecond: 0,
+      ctaText: 'Assemble a Library',
+      nextCost: 500,
+    },
+    {
+      id: 'dungeon',
+      name: 'Dungeons',
+      description: 'A quiet place to do dark business.',
+      purchased: false,
+      quantity: 0,
+      outfluxPerSecond: 0,
+      ctaText: 'Craft a Dungeon',
+      nextCost: 1000,
+    },
+    {
+      id: 'city',
+      name: 'City of the Dead',
+      description: 'Where once was life and movement, all is dark and waiting.',
+      purchased: false,
+      quantity: 0,
+      outfluxPerSecond: 0,
+      ctaText: 'Convert a city',
+      nextCost: 5000,
+    },
+    {
+      id: 'army',
+      name: 'Armies of the Dead',
+      description: 'A wall of undead as far as the eye can see.',
+      purchased: false,
+      quantity: 0,
+      outfluxPerSecond: 0,
+      ctaText: 'Raise an Army',
+      nextCost: 10000,
+    },
+  ],
+};
+
+export default initialGameState;
