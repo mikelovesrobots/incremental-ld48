@@ -131,7 +131,7 @@ const initialGameState = {
       type: PurchasableType.Oneshot,
       name: 'Be Reborn',
       description:
-        'Your vessel is wearing out. You can give up all your progress and transfer your consciousness to a new host for an ×2 multiplier bonus.',
+        'Your vessel is wearing out. You can give up all your progress and transfer your consciousness to a new host for a ×2 multiplier bonus.',
       isUnlocked: false,
       unlockConditions: {
         purchasableId: 'library',
