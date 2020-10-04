@@ -79,17 +79,17 @@ const App: React.FunctionComponent = () => {
   return (
     <Container className="p-3">
       <Jumbotron>
-        <h1 className="header">Infinitely Worse - A Lich Adventure</h1>
+        <h1 className="header">Infinitely Worse - A Necromantic Adventure</h1>
       </Jumbotron>
       <Navbar variant="dark" bg="info" sticky="top">
         <Navbar.Text className="pr-4">
           <span className="text-uppercase font-weight-bold">Power:</span> ♅
-          {gameState.power}
+          {Math.floor(gameState.power)}
         </Navbar.Text>
         {gameState.influxPerSecond > 0 && (
           <Navbar.Text>
-            <span className="text-uppercase font-weight-bold">Influx:</span> ♅
-            {gameState.influxPerSecond}/s
+            <span className="text-uppercase font-weight-bold">Influx:</span> +♅
+            {Math.floor(gameState.influxPerSecond)}/s
           </Navbar.Text>
         )}
       </Navbar>

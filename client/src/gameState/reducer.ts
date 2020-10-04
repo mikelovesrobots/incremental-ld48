@@ -1,25 +1,12 @@
 import { GameState, GameStateAction } from './types';
-import { nextCostSelector } from './selectors';
+import { updateStateForPurchase, updateStateForTick } from './updators';
 
 const reducer = (state: GameState, action: GameStateAction) => {
   switch (action.type) {
     case 'purchase':
-      return {
-        ...state,
-        power: state.power - nextCostSelector(state, action.id),
-        purchasables: state.purchasables.map((purchasable) => ({
-          ...purchasable,
-          quantity:
-            purchasable.id === action.id
-              ? purchasable.quantity + 1
-              : purchasable,
-        })),
-      } as GameState;
+      return updateStateForPurchase(state, action);
     case 'tick':
-      return {
-        ...state,
-        power: state.power + (state.influxPerSecond * state.tickSpeed) / 1000,
-      };
+      return updateStateForTick(state);
     default:
       throw new Error('Unexpected action');
   }
