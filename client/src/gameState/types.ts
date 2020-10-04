@@ -32,7 +32,11 @@ export interface GameState {
   purchasables: Purchasable[];
 }
 
-export type GameStateAction = {
+export interface GameStateAction {
   type: string;
-  id?: string;
-};
+  purchasable?: Purchasable;
+}
+
+export interface PurchasableGameStateAction extends GameStateAction {
+  purchasable: Purchasable;
+}

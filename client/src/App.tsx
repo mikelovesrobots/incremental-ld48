@@ -15,7 +15,7 @@ const App: React.FunctionComponent = () => {
   const [gameState, dispatch] = useGameState(initialGameState);
 
   const onPurchase = (purchasable: Purchasable) => {
-    dispatch({ type: 'purchase', id: purchasable.id });
+    dispatch({ type: 'purchase', purchasable });
   };
 
   const unlockedPurchasables = gameState.purchasables.filter(

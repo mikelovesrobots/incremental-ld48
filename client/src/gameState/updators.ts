@@ -1,28 +1,19 @@
-import { nextCostSelector, purchasableByIdSelector } from './selectors';
-import { GameState, GameStateAction } from './types';
+import { GameState, PurchasableGameStateAction } from './types';
 
 export const updateStateForPurchase = (
   state: GameState,
-  action: GameStateAction
+  action: PurchasableGameStateAction
 ) => {
-  const originalPurchasedPurchasable = purchasableByIdSelector(
-    state,
-    action.id ?? 'zombie'
-  );
-
-  const quantity = originalPurchasedPurchasable.quantity + 1;
+  const quantity = action.purchasable.quantity + 1;
   const multiplier = Math.floor(quantity / 25); // every 25 get a new one
   const outfluxPerSecond =
-    originalPurchasedPurchasable.baseProductivityPerSecond *
-    quantity *
-    (1 + multiplier);
+    action.purchasable.baseProductivityPerSecond * quantity * (1 + multiplier);
   const nextCost =
-    originalPurchasedPurchasable.baseCost *
-    originalPurchasedPurchasable.costCoefficient **
-      originalPurchasedPurchasable.quantity;
+    action.purchasable.baseCost *
+    action.purchasable.costCoefficient ** action.purchasable.quantity;
 
   const newPurchasedPurchasable = {
-    ...originalPurchasedPurchasable,
+    ...action.purchasable,
     quantity,
     outfluxPerSecond,
     nextCost,
@@ -30,7 +21,7 @@ export const updateStateForPurchase = (
   };
 
   const purchasables = state.purchasables.map((purchasable) => {
-    if (purchasable.id !== action.id) {
+    if (purchasable.id !== action.purchasable?.id) {
       const isUnlocked =
         purchasable.isUnlocked ||
         (purchasable.unlockConditions &&
@@ -49,7 +40,7 @@ export const updateStateForPurchase = (
 
   return {
     ...state,
-    power: state.power - nextCostSelector(state, action.id),
+    power: state.power - action.purchasable.nextCost,
     influxPerSecond: purchasables
       .map((purchasable) => purchasable.outfluxPerSecond)
       .reduce((accumulator, next) => accumulator + next),
