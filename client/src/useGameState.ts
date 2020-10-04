@@ -1,5 +1,4 @@
 import { useReducer } from 'react';
-import PurchasableCard from './PurchasableCard';
 
 export interface Purchasable {
   id: string;
@@ -14,15 +13,16 @@ export interface Purchasable {
 
 type GameStateAction = {
   type: string;
-  id: string;
+  id?: string;
 };
 
 export interface GameState {
   power: number;
+  tickSpeed: number;
   purchasables: Purchasable[];
 }
 
-const nextCostSelector = (state: GameState, id: string) => {
+const nextCostSelector = (state: GameState, id?: string) => {
   const found = state.purchasables.find((purchasable: Purchasable) => {
     return purchasable.id === id;
   });
@@ -31,6 +31,12 @@ const nextCostSelector = (state: GameState, id: string) => {
     return found.nextCost;
   }
   return 0;
+};
+
+const totalOutfluxSelector = (state: GameState) => {
+  return state.purchasables
+    .map((next) => next.outfluxPerSecond)
+    .reduce((accumulator, next) => accumulator + next);
 };
 
 const reducer = (state: GameState, action: GameStateAction) => {
@@ -47,6 +53,12 @@ const reducer = (state: GameState, action: GameStateAction) => {
               : purchasable,
         })),
       } as GameState;
+    case 'tick':
+      return {
+        ...state,
+        power:
+          state.power + (totalOutfluxSelector(state) * state.tickSpeed) / 1000,
+      };
     default:
       throw new Error('Unexpected action');
   }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import Container from 'react-bootstrap/esm/Container';
 import Jumbotron from 'react-bootstrap/esm/Jumbotron';
@@ -6,11 +6,13 @@ import Navbar from 'react-bootstrap/esm/Navbar';
 import Card from 'react-bootstrap/esm/Card';
 import CardColumns from 'react-bootstrap/esm/CardColumns';
 import Button from 'react-bootstrap/esm/Button';
+import { useInterval } from 'beautiful-react-hooks';
 import PurchasableCard from './PurchasableCard';
 import useGameState, { Purchasable } from './useGameState';
 
 const initialGameState = {
   power: 100,
+  tickSpeed: 100,
   purchasables: [
     {
       id: 'zombie',
@@ -18,7 +20,7 @@ const initialGameState = {
       description: 'A speechless revenant.',
       purchased: true,
       quantity: 1,
-      outfluxPerSecond: 50,
+      outfluxPerSecond: 0,
       ctaText: 'Raise a Zombie',
       nextCost: 50,
     },
@@ -68,6 +70,10 @@ const initialGameState = {
 
 const App: React.FunctionComponent = () => {
   const [gameState, dispatch] = useGameState(initialGameState);
+
+  useInterval(() => {
+    dispatch({ type: 'tick' });
+  }, gameState.tickSpeed);
 
   const onPurchase = (purchasable: Purchasable) => {
     dispatch({ type: 'purchase', id: purchasable.id });
