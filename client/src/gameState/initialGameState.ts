@@ -13,7 +13,7 @@ const initialGameState = {
       type: PurchasableType.Oneshot,
       name: 'Awaken',
       description:
-        'Emerge from your unmarked grave and wreck your vengence upon the living.',
+        'Emerge from your unmarked grave and wreck your vengeance upon the living.',
       isUnlocked: true,
       isPurchased: false,
       quantity: 0,
