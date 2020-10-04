@@ -1,12 +1,32 @@
+import { PurchasableType } from './types';
+
 const initialGameState = {
   power: 5,
   tickSpeed: 100,
   influxPerSecond: 0,
   purchasables: [
     {
+      id: 'emerge',
+      type: PurchasableType.Oneshot,
+      name: 'Awaken',
+      description:
+        'Emerge from your unmarked grave and wreck your vengence upon the living.',
+      visible: true,
+      purchased: false,
+      quantity: 0,
+      outfluxPerSecond: 0,
+      ctaText: 'Emerge',
+      nextCost: 1,
+      baseCost: 0,
+      costCoefficient: 0,
+      baseProductivityPerSecond: 0,
+    },
+    {
       id: 'zombie',
+      type: PurchasableType.Generator,
       name: 'Zombie',
       description: 'A speechless revenant.',
+      visible: false,
       purchased: true,
       quantity: 0,
       outfluxPerSecond: 0,
@@ -18,9 +38,11 @@ const initialGameState = {
     },
     {
       id: 'library',
+      type: PurchasableType.Generator,
       name: 'Evil Library',
       description:
         'Knowledge is dangerous. The people who control that knowledge are even more dangerous.',
+      visible: false,
       purchased: false,
       quantity: 0,
       outfluxPerSecond: 0,
@@ -32,8 +54,10 @@ const initialGameState = {
     },
     {
       id: 'dungeon',
+      type: PurchasableType.Generator,
       name: 'Dungeons',
       description: 'A quiet place to do dark business.',
+      visible: false,
       purchased: false,
       quantity: 0,
       outfluxPerSecond: 0,
@@ -45,8 +69,10 @@ const initialGameState = {
     },
     {
       id: 'city',
+      type: PurchasableType.Generator,
       name: 'City of the Dead',
       description: 'Where once was life and movement, all is dark and waiting.',
+      visible: false,
       purchased: false,
       quantity: 0,
       outfluxPerSecond: 0,
@@ -58,8 +84,10 @@ const initialGameState = {
     },
     {
       id: 'army',
+      type: PurchasableType.Generator,
       name: 'Armies of the Dead',
       description: 'A wall of undead as far as the eye can see.',
+      visible: false,
       purchased: false,
       quantity: 0,
       outfluxPerSecond: 0,

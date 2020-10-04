@@ -1,7 +1,20 @@
+export enum PurchasableType {
+  Oneshot,
+  Generator,
+}
+
+export interface UnlockConditions {
+  purchasableId: string;
+  quantity: number;
+}
+
 export interface Purchasable {
   id: string;
   name: string;
+  type: PurchasableType;
   description: string;
+  visible: boolean;
+  unlockConditions: UnlockConditions;
   purchased: boolean;
   quantity: number;
   outfluxPerSecond: number;

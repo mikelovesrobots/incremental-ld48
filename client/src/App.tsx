@@ -18,6 +18,10 @@ const App: React.FunctionComponent = () => {
     dispatch({ type: 'purchase', id: purchasable.id });
   };
 
+  const visiblePurchasables = gameState.purchasables.filter(
+    (purchasable) => purchasable.visible
+  );
+
   return (
     <Container className="p-3">
       <Jumbotron>
@@ -36,7 +40,7 @@ const App: React.FunctionComponent = () => {
         )}
       </Navbar>
       <CardColumns className="mt-4">
-        {gameState.purchasables.map((purchasable) => (
+        {visiblePurchasables.map((purchasable) => (
           <PurchasableCard
             purchasable={purchasable}
             key={purchasable.id}
