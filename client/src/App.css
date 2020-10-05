@@ -1,4 +1,4 @@
-body {
+* {
   /* disable double-tap to zoom */
-  touch-action: manipulate;
+  touch-action: manipulation;
 }
