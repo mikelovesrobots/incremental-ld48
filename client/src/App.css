@@ -2,3 +2,7 @@
   /* disable double-tap to zoom */
   touch-action: manipulation;
 }
+
+.stat {
+  font-variant-numeric: tabular-nums;
+}

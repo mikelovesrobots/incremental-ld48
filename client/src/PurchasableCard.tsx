@@ -43,7 +43,10 @@ const PurchasableCard: React.FunctionComponent<PurchasableCardProps> = ({
                   <span className="text-uppercase font-weight-bold">
                     Outflux:
                   </span>
-                  &nbsp;♅+{Math.floor(purchasable.outfluxPerSecond)}/s
+                  &nbsp;
+                  <span className="stat">
+                    ♅+{Math.floor(purchasable.outfluxPerSecond)}/s
+                  </span>
                 </li>
               )}
             </ul>

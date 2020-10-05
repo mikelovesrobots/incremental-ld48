@@ -28,14 +28,16 @@ const App: React.FunctionComponent = () => {
       {gameState.isGameOver === false && (
         <Navbar variant="dark" bg="info" sticky="top">
           <Navbar.Text className="pr-4 text-white">
-            <span className="text-uppercase font-weight-bold">Power:</span> ♅
-            {Math.floor(gameState.power)}
+            <span className="text-uppercase font-weight-bold">Power:</span>{' '}
+            <span className="stat">♅{Math.floor(gameState.power)}</span>
           </Navbar.Text>
           {gameState.influxPerSecond > 0 && (
             <Navbar.Text className="pr-4 text-white">
               <span className="text-uppercase font-weight-bold">Influx:</span>{' '}
-              ♅+
-              {Math.floor(gameState.influxPerSecond)}/s
+              <span className="stat">
+                ♅+
+                {Math.floor(gameState.influxPerSecond)}/s
+              </span>
             </Navbar.Text>
           )}
           {gameState.powerRebirthMultiplier > 1 && (
@@ -43,7 +45,7 @@ const App: React.FunctionComponent = () => {
               <span className="text-uppercase font-weight-bold">
                 Multiplier:
               </span>{' '}
-              ×{gameState.powerRebirthMultiplier}
+              <span className="stat">×{gameState.powerRebirthMultiplier}</span>
             </Navbar.Text>
           )}
         </Navbar>
