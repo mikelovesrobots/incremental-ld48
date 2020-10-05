@@ -1,0 +1,4 @@
+body {
+  /* disable double-tap to zoom */
+  touch-action: manipulate;
+}
