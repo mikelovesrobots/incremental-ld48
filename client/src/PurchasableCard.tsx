@@ -35,7 +35,7 @@ const PurchasableCard: React.FunctionComponent<PurchasableCardProps> = ({
                   <span className="text-uppercase font-weight-bold">
                     Quantity:
                   </span>
-                  &nbsp;{purchasable.quantity}
+                  &nbsp;{purchasable.quantity.toLocaleString()}
                 </li>
               )}
               {purchasable.outfluxPerSecond > 0 && (
@@ -45,7 +45,9 @@ const PurchasableCard: React.FunctionComponent<PurchasableCardProps> = ({
                   </span>
                   &nbsp;
                   <span className="stat">
-                    ♅+{Math.floor(purchasable.outfluxPerSecond)}/s
+                    ♅+
+                    {Math.floor(purchasable.outfluxPerSecond).toLocaleString()}
+                    /s
                   </span>
                 </li>
               )}
@@ -67,7 +69,7 @@ const PurchasableCard: React.FunctionComponent<PurchasableCardProps> = ({
           >
             {purchasable.ctaText}
             {purchasable.nextCost > 0 &&
-              ` for ♅${Math.floor(purchasable.nextCost)}`}
+              ` for ♅${Math.floor(purchasable.nextCost).toLocaleString()}`}
           </Button>
         )}
       </Card.Body>

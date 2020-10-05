@@ -29,14 +29,16 @@ const App: React.FunctionComponent = () => {
         <Navbar variant="dark" bg="info" sticky="top">
           <Navbar.Text className="pr-4 text-white">
             <span className="text-uppercase font-weight-bold">Power:</span>{' '}
-            <span className="stat">♅{Math.floor(gameState.power)}</span>
+            <span className="stat">
+              ♅{Math.floor(gameState.power).toLocaleString()}
+            </span>
           </Navbar.Text>
           {gameState.influxPerSecond > 0 && (
             <Navbar.Text className="pr-4 text-white">
               <span className="text-uppercase font-weight-bold">Influx:</span>{' '}
               <span className="stat">
                 ♅+
-                {Math.floor(gameState.influxPerSecond)}/s
+                {Math.floor(gameState.influxPerSecond).toLocaleString()}/s
               </span>
             </Navbar.Text>
           )}
@@ -45,7 +47,9 @@ const App: React.FunctionComponent = () => {
               <span className="text-uppercase font-weight-bold">
                 Multiplier:
               </span>{' '}
-              <span className="stat">×{gameState.powerRebirthMultiplier}</span>
+              <span className="stat">
+                ×{gameState.powerRebirthMultiplier.toLocaleString()}
+              </span>
             </Navbar.Text>
           )}
         </Navbar>
